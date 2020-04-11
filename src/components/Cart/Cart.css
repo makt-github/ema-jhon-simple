@@ -1,0 +1,17 @@
+
+.order-summary{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid goldenrod;
+}
+
+
+.order-review{
+    width: 150px;
+    height: 30px;
+    border: 1px solid whitesmoke;
+    background-color: goldenrod;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
