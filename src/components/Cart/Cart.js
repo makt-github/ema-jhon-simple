@@ -1,5 +1,6 @@
 import React from 'react';
 import './Cart.css';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Cart = (props) => {
 
@@ -11,7 +12,7 @@ const Cart = (props) => {
     let total =0 ;
     for(let i = 0; i < cart.length; i++){
         const product = cart[i];
-        total = total + product.price;
+        total = total + product.price * product.quantity;
     }
 
     let shipping = 0;
@@ -47,7 +48,7 @@ const Cart = (props) => {
             <p><small>Tax + VAT:$ {formetNumber(tax)}</small></p>
             <p><span style={{color:'red'}}>Total Price:$</span> {formetNumber(total + shipping + tax)}</p>
             <br/>
-            <button className="order-review">Review Your Order</button>
+            <Link to="/review"><button className="order-review">Review Your Order</button></Link>
         </div>
     );
 };

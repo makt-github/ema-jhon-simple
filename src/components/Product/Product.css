@@ -3,9 +3,19 @@
     display: flex;
     border-bottom: 1px solid lightslategray;
     padding-bottom: 5px;
-    margin-right: 15px;
+    margin-left: 15px;
     margin-bottom: 5px;
-    
+    text-align: left;
+
+   
+}
+
+.product img{
+    width:150px;
+    height: 150px;
+    margin-top: 20px;
+    padding: 10px;
+    margin: 10px;
 }
 .product-name{
     color: blue;
