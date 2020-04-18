@@ -16,7 +16,7 @@ const ReviewItem = (props) => {
 
         <div style={reviewItemStyle}>
 
-            <div style={{width:'70px', height:'70px',padding:'10px',margin:'7px'}}>
+            <div className="review-img">
                 <img src={img} alt="" />
             </div>
 

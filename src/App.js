@@ -48,7 +48,7 @@ function App() {
 
       </Router>
 
-      <p>©2020, Developed By Tayef 🙂 </p>
+      <footer>©2020, Developed By Tayef 🙂</footer>
 
     </div>
   );
