@@ -2,9 +2,12 @@ import React from 'react';
 import './Cart.css';
 
 
+
 const Cart = (props) => {
 
     const cart = props.cart ;
+    
+    // const user = useContext(UserContext);
    // console.log(cart);
 
     //const total = cart.reduce((total,product)=> total + product.price,0);
@@ -52,6 +55,8 @@ const Cart = (props) => {
             {
                 props.children 
             }
+
+            
         </div>
     );
 };

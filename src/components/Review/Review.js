@@ -4,12 +4,16 @@ import fakeData from '../../fakeData';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import Cart from '../Cart/Cart';
 import './Review.css';
+import { Link } from 'react-router-dom';
 import delivaryImage from '../../images/giphy.gif';
+import { useAuth } from '../Login/userAuth';
 
 const Review = () => {
     const [cart, setCart] = useState([]);
 
     const [placeOrder, setPlaceOrder] = useState(false);
+
+    const auth = useAuth();
 
     const placeOrderBtn = () => {
         setCart([]);
@@ -43,11 +47,7 @@ const Review = () => {
 
 
 
-    let thankyou;
-
-    if (placeOrder) {
-        thankyou = <img src={delivaryImage} alt="" />
-    }
+    
 
 
     return (
@@ -65,14 +65,33 @@ const Review = () => {
 
                     </ReviewItem>)
                 }
-                       {thankyou}
+                     
+                       {
+                           !cart.length && <h1> You Have Nothing to be Cart Off 
+                               <a href="/shop">  Please Visit Our Shop Page</a>
+                                 <br/> 
+                                 <br/>
+                                 Happy Shopping!! 
+                           </h1> 
+                           
+                          
+                       }
 
             </div>
 
           
             <div>
                 <Cart cart={cart}>
-                    <button className="add-cart-btn" onClick={placeOrderBtn}>Place Order</button>
+
+                    <Link to="shipment">
+                           {
+                               auth.user ?
+                               <button className="add-cart-btn">Proceed to Ship</button>
+                               :
+                               <button className="add-cart-btn">Go For Login</button>
+                           }
+                    </Link>
+
                 </Cart>
 
             </div>

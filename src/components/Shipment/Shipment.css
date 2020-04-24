@@ -1,0 +1,31 @@
+
+.shipment-form{
+    margin:100px;
+    /* margin-right: 700px; */
+    padding: 25px;
+    box-shadow: 5px 5px 10px goldenrod;
+    border-radius: 10px;
+    background-color: grey;
+    
+
+}
+
+.shipment-form input{
+    display: block;
+    margin-top:10px;
+    padding: 5px;
+    margin-left:400px;
+    border: 1px solid gray;
+    width: 300px;
+    
+}
+
+.shipment-form h1{
+    color:orange;
+   
+}
+
+.error{
+    color:red
+    
+}

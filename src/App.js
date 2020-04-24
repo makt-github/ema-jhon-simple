@@ -14,41 +14,58 @@ import {
   Link
 } from "react-router-dom";
 import ProductDetail from './components/ProductDetail/ProductDetail';
+import Login from './components/Login/Login';
+import  { AuthContextProvider, PrivateRoute } from './components/Login/userAuth';
+import Shipment from './components/Shipment/Shipment';
 
 
 
 
-function App() {
+
+function App(props) {
+ 
   return (
     <div className="header">
-      <Header></Header>
 
-      <Router>
-        <Switch>
-          <Route path="/shop">
-            <Shop></Shop>
-          </Route>
-          <Route path="/review">
-            <Review></Review>
-          </Route>
+      <AuthContextProvider>
 
-          <Route path="/inventory">
-            <Inventory></Inventory>
-          </Route>
-          <Route exact path="/">
-            <Shop></Shop>
-          </Route>
-          <Route path="/product/:productKey">
-            <ProductDetail></ProductDetail>
-          </Route>
-          <Route path="*">
-            <NotFound></NotFound>   
-          </Route>
-        </Switch>
+                  <Header></Header>
 
-      </Router>
+            <Router>
+                  <Switch>
+                    <Route path="/shop">
+                      <Shop></Shop>
+                    </Route>
+                    <Route path="/review">
+                      <Review></Review>
+                    </Route>
+
+                    <Route path="/inventory">
+                      <Inventory></Inventory>
+                    </Route>
+                    <Route exact path="/">
+                      <Shop></Shop>
+                    </Route>
+                    <Route path="/product/:productKey">
+                      <ProductDetail></ProductDetail>
+                    </Route>
+                    <Route path="/login">
+                      <Login></Login>
+                    </Route>
+                    <PrivateRoute path="/shipment">
+                      <Shipment></Shipment>
+                    </PrivateRoute>
+                    <Route path="*">
+                      <NotFound></NotFound>   
+                    </Route>
+                  </Switch>
+
+</Router>
 
       <footer>©2020, Developed By Tayef 🙂</footer>
+
+
+      </AuthContextProvider>
 
     </div>
   );
